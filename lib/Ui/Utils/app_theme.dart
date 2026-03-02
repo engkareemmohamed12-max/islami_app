@@ -11,8 +11,18 @@ class AppTheme {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
 
       backgroundColor: AppColors.primaryColor,
-      selectedItemColor: AppColors.blackColor,
-      unselectedItemColor: AppColors.whiteColor,
+      selectedItemColor: AppColors.whiteColor,
+      unselectedItemColor: AppColors.blackColor,
+    ),
+    textTheme: TextTheme(
+
+      headlineSmall: TextStyle(
+
+        fontWeight: FontWeight.bold,
+        color: AppColors.whiteColor,
+        fontSize: 16,
+      ),
+
     ),
 
   );
