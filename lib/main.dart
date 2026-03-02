@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami_app/Ui/Utils/app_theme.dart';
 import 'package:islami_app/Ui/home_screen.dart';
 
 void main() {
@@ -19,11 +20,16 @@ class App extends StatelessWidget {
       ),
     );
 
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingPage(),
+      home: const OnBoardingPage(),
+
+      darkTheme: AppTheme.dartTheme,
+      themeMode: ThemeMode.dark,
     );
+
   }
+
 }
 
 class OnBoardingPage extends StatelessWidget {
@@ -72,11 +78,14 @@ class OnBoardingPage extends StatelessWidget {
       onDone: () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const HomeScreen()),
+          MaterialPageRoute(builder: (_) =>  HomeScreen()),
         );
       },
+
     );
   }
+
+
 
   Widget _buildRawPage(String logo, String image, String title, String subtitle) {
     const goldColor = Color(0xFFE2BE7F);
@@ -116,4 +125,5 @@ class OnBoardingPage extends StatelessWidget {
       ),
     );
   }
+
 }
