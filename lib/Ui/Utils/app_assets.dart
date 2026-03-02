@@ -17,4 +17,13 @@ class AppAssets {
   static const String icontime = 'assets/images/ic_time.png';
   static const String iconradio = 'assets/images/ic_radio.png';
 
+  static const String logo = 'assets/images/logo.png';
+
+  static const String iconSearch = 'assets/images/quran-text-icon.png';
+
+  static const String mostRecent = 'assets/images/img_most_recent.png';
+
+
+
+
 }
