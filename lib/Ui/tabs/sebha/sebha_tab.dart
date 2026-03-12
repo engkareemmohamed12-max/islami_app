@@ -71,7 +71,6 @@ class _SebhaScreenState extends State<SebhaScreen>
 
             Text("سَبِّحِ اسْمَ رَبِّكَ الأعلى " , style: AppStyle.bold32white),
 
-            /// النص فوق السبحة
             Transform.translate(
               offset: const Offset(0, 30),
               child: Image.asset(
