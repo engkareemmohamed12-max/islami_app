@@ -10,11 +10,11 @@ class RadioTab extends StatefulWidget {
 
 class _RadioTabState extends State<RadioTab> {
 
-  bool showRadioList = true; // لتحديد أي قائمة تظهر
+  bool showRadioList = true;
 
   @override
   Widget build(BuildContext context) {
-    // القوائم
+
     final radioList = [
       "Radio Ibrahim Al-Akdar",
       "Radio Al-Qaria Yassen",
