@@ -73,7 +73,7 @@ class _SebhaScreenState extends State<SebhaScreen>
 
             /// النص فوق السبحة
             Transform.translate(
-              offset: const Offset(0, 30), // الرقم ده ينزل الصورة لتحت
+              offset: const Offset(0, 30),
               child: Image.asset(
                 'assets/images/sebha12.png',
                 width: 120,
@@ -82,7 +82,6 @@ class _SebhaScreenState extends State<SebhaScreen>
 
             const SizedBox(height: 20),
 
-            /// السبحة
             Stack(
               alignment: Alignment.center,
               children: [
