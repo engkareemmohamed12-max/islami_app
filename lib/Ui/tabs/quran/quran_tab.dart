@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/Ui/Utils/app_assets.dart';
 import 'package:islami_app/Ui/Utils/app_colors.dart';
 import 'package:islami_app/Ui/Utils/app_mediaquery.dart';
+import 'package:islami_app/Ui/Utils/app_route.dart';
 import 'package:islami_app/Ui/Utils/app_style.dart';
+import 'package:islami_app/Ui/tabs/quran/widget/most_recently_widget.dart';
+import 'package:islami_app/Ui/tabs/quran/widget/sura_item_widget.dart';
 
 class Quran extends StatelessWidget {
   const Quran({super.key});
@@ -20,6 +23,7 @@ class Quran extends StatelessWidget {
 
         children: [
           TextField(
+
             style: TextStyle(
               color: Colors.white,
             ),
@@ -36,64 +40,32 @@ class Quran extends StatelessWidget {
 
 
           ),
-          Text('Most Recently' ,
+          MostRecentlyWidget(),
+          Text('Suras List' ,
           style: AppStyle.bold16White,
 
           ),
-
-          SizedBox(
-            height: AppMediaQuery.height(context)*0.16,
-
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-                itemBuilder: (context , index){
-                  return Container(
-                    padding: EdgeInsets.symmetric(horizontal: AppMediaQuery.width(context)*0.04),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-
-                    child: Row(
-                      children: [
-
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('Al-Anbiya' ,
-
-                            style: AppStyle.bold24black
-                            ),
-                            Text('الأنبياء' ,
-                                style: AppStyle.bold24black
-
-                            ),
-                            Text('112 Verses' ,
-                                style: AppStyle.bold14black
-
-                            ),
-
-                          ],
-                        ),
-                        Image.asset(AppAssets.mostRecent),
-
-                      ],
-                    ),
-
-                  );
-                },
-
-
-
-                separatorBuilder: (context , index){
-                        return SizedBox(width: AppMediaQuery.width(context)*0.04,);
-
-
-                        },
-
-                itemCount: 10,
-
-            ),
+          
+          Expanded(child: ListView.separated(
+              itemBuilder: (context, index) {
+                return InkWell(
+                    onTap: (){
+                      Navigator.of(context).pushNamed(AppRoute.suraDetailsRouteName ,
+                      arguments: index,
+                      );
+                    },
+                    child: SuraItemWidget(index: index,));
+              },
+              separatorBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(vertical: AppMediaQuery.height(context)*0.02),
+                  child: Divider(
+                    thickness: 2,
+                    color: AppColors.whiteColor,
+                  ),
+                );
+              },
+              itemCount: 114)
           ),
 
 

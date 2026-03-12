@@ -14,6 +14,13 @@ class AppTheme {
       selectedItemColor: AppColors.whiteColor,
       unselectedItemColor: AppColors.blackColor,
     ),
+    appBarTheme: AppBarThemeData(
+      backgroundColor: AppColors.blackColor,
+      centerTitle: true,
+      iconTheme: IconThemeData(
+        color: AppColors.primaryColor,
+      )
+    ),
     textTheme: TextTheme(
 
       headlineSmall: TextStyle(

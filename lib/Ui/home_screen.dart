@@ -7,6 +7,7 @@ import 'package:islami_app/Ui/Utils/app_theme.dart';
 import 'package:islami_app/Ui/tabs/hadeth/hadeth_tab.dart';
 import 'package:islami_app/Ui/tabs/quran/quran_tab.dart';
 import 'package:islami_app/Ui/tabs/radio/radio_tab.dart';
+import 'package:islami_app/Ui/tabs/radio/widget/list_widget.dart';
 import 'package:islami_app/Ui/tabs/sebha/sebha_tab.dart';
 import 'package:islami_app/Ui/tabs/time/time_tab.dart';
 
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   ];
 
-  List<Widget> tabList = [Quran() , Hadeth() , Sebha() , Time() , RadioTab()];
+  List<Widget> tabList = [Quran() , Hadeth() , SebhaScreen() , RadioTab() , Time()];
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
           
                   builtBottomNavBarItem(index: 2, iconName: AppAssets.iconsebha, label: 'Sebha'),
           
-                  builtBottomNavBarItem(index: 3, iconName: AppAssets.icontime, label: 'Time'),
+                  builtBottomNavBarItem(index: 3, iconName: AppAssets.iconradio, label: 'Radio'),
           
-                  builtBottomNavBarItem(index: 4, iconName: AppAssets.iconradio, label: 'Radio'),
+                  builtBottomNavBarItem(index: 4, iconName: AppAssets.icontime, label: 'Time'),
           
           
           

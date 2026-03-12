@@ -16,8 +16,14 @@ class Assets {
   static const String imagesIcRadio = 'assets/images/ic_radio.png';
   static const String imagesIcSebha = 'assets/images/ic_sebha.png';
   static const String imagesIcTime = 'assets/images/ic_time.png';
+  static const String imagesImgBottomDecoration = 'assets/images/img_bottom_decoration.png';
+  static const String imagesImgLeftCorner = 'assets/images/img_left_corner.png';
+  static const String imagesImgMostRecent = 'assets/images/img_most_recent.png';
+  static const String imagesImgRightCorner = 'assets/images/img_right_corner.png';
+  static const String imagesImgSurNumberFrame = 'assets/images/img_sur_number_frame.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesQuranBg = 'assets/images/quran_bg.png';
+  static const String imagesQuranTextIcon = 'assets/images/quran-text-icon.png';
   static const String imagesRadio = 'assets/images/radio.png';
   static const String imagesSebha = 'assets/images/sebha.png';
   static const String imagesSplashScreen = 'assets/images/splash_screen.png';

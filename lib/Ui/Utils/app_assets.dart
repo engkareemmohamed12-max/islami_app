@@ -23,6 +23,19 @@ class AppAssets {
 
   static const String mostRecent = 'assets/images/img_most_recent.png';
 
+  static const String frame = 'assets/images/img_sur_number_frame.png';
+
+  static const String leftCorne = 'assets/images/img_left_corner.png';
+
+  static const String rightCorner = 'assets/images/img_right_corner.png';
+
+  static const String mosqueImage = 'assets/images/img_bottom_decoration.png';
+
+  static const String detailsBg = 'assets/images/Soura Details Screen.png';
+
+
+
+
 
 
 
