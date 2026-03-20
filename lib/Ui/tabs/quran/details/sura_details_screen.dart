@@ -17,18 +17,16 @@ class SuraDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   List<String> verses = [];
-
   bool isListMode = true;
 
   @override
   Widget build(BuildContext context) {
 
-    var index = ModalRoute.of(context)?.settings.arguments as int;
+    var index = ModalRoute.of(context)!.settings.arguments as int;
 
     if (verses.isEmpty) {
-
-        loadSuraFile(index);
-      }
+      loadSuraFile(index);
+    }
 
     return Scaffold(
       backgroundColor: AppColors.blackBgColor,
@@ -38,7 +36,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           QuranReasources.englishQuranSurahs[index],
           style: AppStyle.bold24primary,
         ),
-
         actions: [
 
           IconButton(
@@ -58,77 +55,124 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               });
             },
           ),
-
         ],
       ),
 
-      body: Column(
-        spacing: AppMediaQuery.height(context) * 0.02,
-        children: [
+      body: SafeArea(
+        child: Column(
+          children: [
 
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppMediaQuery.width(context) * 0.01,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(AppAssets.leftCorne),
+            SizedBox(height: AppMediaQuery.height(context) * 0.02),
 
-                Text(
-                  QuranReasources.arabicAuranSuras[index],
-                  style: AppStyle.bold20primary,
-                ),
-
-                Image.asset(AppAssets.rightCorner),
-              ],
-            ),
-          ),
-
-          Expanded(
-            child: verses.isEmpty
-                ? Center(
-              child: CircularProgressIndicator(
-                color: AppColors.primaryColor,
-              ),
-            )
-                : isListMode
-                ? ListView.separated(
-              itemBuilder: (context, index) {
-                return SuraContent(
-                  content: verses[index],
-                  index: index,
-                );
-              },
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  height: AppMediaQuery.height(context) * 0.02,
-                );
-              },
-              itemCount: verses.length,
-            )
-                : SingleChildScrollView(
+            Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: AppMediaQuery.width(context) * 0.04,
+                horizontal: AppMediaQuery.width(context) * 0.02,
               ),
-              child: Text.rich(
-                TextSpan(
-                  children: List.generate(verses.length, (i) {
-                    return TextSpan(
-                      text: ' [${i + 1}]${verses[i]}',
+              child: Row(
+                children: [
+
+                  Image.asset(
+                    AppAssets.leftCorne,
+                    width: 40,
+                    fit: BoxFit.contain,
+                  ),
+
+                  Expanded(
+                    child: Text(
+                      QuranReasources.arabicAuranSuras[index],
                       style: AppStyle.bold20primary,
-                    );
-                  }),
-                ),
-                textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+
+                  Image.asset(
+                    AppAssets.rightCorner,
+                    width: 40,
+                    fit: BoxFit.contain,
+                  ),
+
+                ],
               ),
             ),
-          ),
 
-          Image.asset(AppAssets.mosqueImage),
+            SizedBox(height: AppMediaQuery.height(context) * 0.02),
 
-        ],
+            Expanded(
+              child: verses.isEmpty
+                  ? Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.primaryColor,
+                ),
+              )
+
+                  : isListMode
+
+                  ? ListView.separated(
+
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppMediaQuery.width(context) * 0.04,
+                ),
+
+                itemBuilder: (context, index) {
+
+                  return SuraContent(
+                    content: verses[index],
+                    index: index,
+                  );
+
+                },
+
+                separatorBuilder: (context, index) {
+
+                  return SizedBox(
+                    height: AppMediaQuery.height(context) * 0.02,
+                  );
+
+                },
+
+                itemCount: verses.length,
+
+              )
+
+                  : SingleChildScrollView(
+
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppMediaQuery.width(context) * 0.04,
+                ),
+
+                child: Text.rich(
+
+                  TextSpan(
+
+                    children: List.generate(verses.length, (i) {
+
+                      return TextSpan(
+
+                        text: ' [${i + 1}] ${verses[i]} ',
+                        style: AppStyle.bold20primary,
+
+                      );
+
+                    }),
+
+                  ),
+
+                  textAlign: TextAlign.center,
+                  textDirection: TextDirection.rtl,
+
+                ),
+
+              ),
+            ),
+
+            Image.asset(
+              AppAssets.mosqueImage,
+              fit: BoxFit.contain,
+            ),
+
+          ],
+        ),
       ),
     );
   }
@@ -144,7 +188,4 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
     setState(() {});
   }
-
-
-
 }

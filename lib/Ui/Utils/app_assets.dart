@@ -33,6 +33,25 @@ class AppAssets {
 
   static const String detailsBg = 'assets/images/Soura Details Screen.png';
 
+  static const String hadeethBg = 'assets/images/HadithCardBackGround 1.png';
+
+
+  static const String left_corner = 'assets/images/left_corner.png';
+
+  static const String right_corner = 'assets/images/right_corner.png';
+
+
+  static const String hadeethmosque = 'assets/images/Mosque-02 2.png';
+
+
+
+
+
+
+
+
+
+
 
 
 

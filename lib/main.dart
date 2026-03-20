@@ -8,6 +8,8 @@ import 'package:islami_app/Ui/Utils/app_theme.dart';
 import 'package:islami_app/Ui/home_screen.dart';
 import 'package:islami_app/Ui/tabs/quran/details/sura_details_screen.dart';
 
+import 'Ui/tabs/hadeth/details/hadeth_details_screen.dart';
+
 void main() {
   runApp(const App());
 }
@@ -31,6 +33,8 @@ class App extends StatelessWidget {
         AppRoute.homeRouteName: (context) =>  HomeScreen(),
         AppRoute.suraDetailsRouteName: (context) =>
         const SuraDetailsScreen(),
+        AppRoute.hadethDetails1RouteName: (context) =>
+        const HadethDetailsScreen(),
       },
       darkTheme: AppTheme.dartTheme,
       themeMode: ThemeMode.dark,
