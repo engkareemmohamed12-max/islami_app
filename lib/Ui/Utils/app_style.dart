@@ -71,4 +71,31 @@ class AppStyle {
 
   );
 
+
+  static TextStyle bold20black = GoogleFonts.elMessiri(
+
+    fontWeight: FontWeight.bold,
+    color: AppColors.blackColor,
+    fontSize: 20,
+
+  );
+
+
+  static TextStyle bold16black = GoogleFonts.elMessiri(
+
+    fontWeight: FontWeight.bold,
+    color: AppColors.blackColor,
+    fontSize: 16,
+
+  );
+
+
+  static TextStyle bold16primary = GoogleFonts.elMessiri(
+
+    fontWeight: FontWeight.bold,
+    color: AppColors.primaryColor,
+    fontSize: 16,
+
+  );
+
 }
